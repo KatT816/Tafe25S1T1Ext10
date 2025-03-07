@@ -8,7 +8,75 @@
     mc:Ignorable="d"
     Background="LightGray">
 
-    <Grid>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
 
-    </Grid>
+		<Border Grid.Row="1" Grid.Column="1" Padding="40" Background="LightGray" CornerRadius="10" BorderBrush="Black" BorderThickness="1" Width="1000" Height="700">
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="700">
+				<TextBlock Text="Currency Conversion Calculator" FontSize="30" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+
+				<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+					<TextBlock Text="Enter Amount:" Foreground="Black" FontSize="14" Width="120" VerticalAlignment="Center"/>
+					<TextBox x:Name="txtAmount" Width="300" Height="30" FontSize="16"/>
+					<StackPanel>
+						<Border BorderThickness="1" Padding="10" Margin="120,0,0,0" Height="60" Width="190" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right">
+							<StackPanel VerticalAlignment="Bottom">
+								<TextBlock Text="USD - US Dollar" Foreground="Black" FontSize="14" HorizontalAlignment="Center" Margin="0,0,0,2"/>
+								<TextBlock Text="GBP - British Pound" Foreground="Black" FontSize="14" HorizontalAlignment="Center"/>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+					<TextBlock Text="From:" Foreground="Black" FontSize="14" Width="120" VerticalAlignment="Center"/>
+					<ComboBox x:Name="cmbFromCurrency" Width="300" Height="30" FontSize="16">
+						<x:String>USD</x:String>
+						<x:String>EUR</x:String>
+						<x:String>GBP</x:String>
+						<x:String>INR</x:String>
+					</ComboBox>
+					<StackPanel>
+						<Border BorderThickness="1" Padding="10" Margin="120,0,0,0" Height="60" Width="190" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right">
+							<StackPanel VerticalAlignment="Top">
+								<TextBlock Text="EUR - Euro" Foreground="Black" FontSize="14" HorizontalAlignment="Center" Margin="0,0,0,2"/>
+								<TextBlock Text="INR - Indian Rupee" Foreground="Black" FontSize="14" HorizontalAlignment="Center"/>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+					<TextBlock Text="To:" Foreground="Black" FontSize="14" Width="120" VerticalAlignment="Center"/>
+					<ComboBox x:Name="cmbToCurrency" Width="300" Height="30" FontSize="16">
+						<x:String>USD</x:String>
+						<x:String>EUR</x:String>
+						<x:String>GBP</x:String>
+						<x:String>INR</x:String>
+					</ComboBox>
+				</StackPanel>
+
+				<TextBlock Text="Converted Amount:" Foreground="Black" FontSize="16" Margin="0,10,0,10"/>
+				<TextBox x:Name="txtConvertedAmount" FontWeight="Bold" Foreground="Black" FontSize="16" Width="400"/>
+
+				<TextBlock Text="Exchange Rate:" Foreground="Black" FontSize="16" Margin="0,10,0,10"/>
+				<TextBox x:Name="txtExchangeRate" FontWeight="Bold" Foreground="Black" FontSize="16" Width="400"/>
+
+				<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,20,0,0">
+					<Button x:Name="btnConvert" Content="Currency Conversion" Width="500" Height="50" FontSize="20" Foreground="Black" Background="LightBlue" Margin="10,10,10,10" HorizontalAlignment="Center" Click="btnConvert_Click"/>
+					<Button x:Name="btnExit" Content="Exit" Width="300" Height="40" FontSize="16" Foreground="Black" Background="LightBlue" Margin="10,10,10,10" HorizontalAlignment="Center" Click="btnExit_Click"/>
+				</StackPanel>
+
+			</StackPanel>
+		</Border>
+	</Grid>
 </Page>
