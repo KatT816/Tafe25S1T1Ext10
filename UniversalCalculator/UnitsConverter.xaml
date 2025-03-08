@@ -6,9 +6,98 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="LightGray">
+    Background="LightGray"
+	Loaded="Page_Loaded">
 
-    <Grid>
+<Grid Margin="20,32,20, 32">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="100" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="40" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="20" />
+		<RowDefinition Height="40" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="20" />
+		<RowDefinition Height="40" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="50" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="30" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="30" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="30" />
+		<RowDefinition Height="Auto" />
+	</Grid.RowDefinitions>
 
-    </Grid>
+	<!-- Heading Section -->
+	<TextBlock Text="Unit Converter" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" />
+
+	<!-- Unit type Amount -->
+		<TextBlock Text="What do you want to convert?" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
+	<ComboBox x:Name="FromUnitType" Grid.Row="3" Grid.Column="1" SelectionChanged="UnitTypeChanged">
+		<ComboBoxItem Content="Temperature" />
+		<ComboBoxItem Content="Distance" />
+		<ComboBoxItem Content="Mass" />
+		<ComboBoxItem Content="Pressure" />
+	</ComboBox>
+
+	<!-- Convert From -->
+		<TextBlock Text="Convert from:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
+
+	<Grid Grid.Row="6" Grid.Column="0" HorizontalAlignment="Stretch">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28"/>
+			<ColumnDefinition Width="122"/>
+			<ColumnDefinition Width="200"/>
+		</Grid.ColumnDefinitions>
+		<TextBox x:Name="ConvertFromTextBox" Width="150" PlaceholderText="Enter Amount" Grid.Column="0" VerticalAlignment="Center" TextAlignment="Left" Grid.ColumnSpan="2" />
+		<ComboBox x:Name="SelectUnitType" Grid.Column="2" SelectionChanged="UnitChanged" VerticalAlignment="Center">
+			<ComboBoxItem Content="Celsius" />
+			<ComboBoxItem Content="Fahrenheit" />
+			<ComboBoxItem Content="Meter" />
+			<ComboBoxItem Content="Foot" />
+			<ComboBoxItem Content="Kilogram" />
+			<ComboBoxItem Content="Pound" />
+			<ComboBoxItem Content="Kpa" />
+			<ComboBoxItem Content="PSI" />
+		</ComboBox>
+	</Grid>
+
+	<!-- Result Display -->
+	<TextBlock Text="Results:" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" />
+	<TextBlock x:Name="ResultTextBlock" Grid.Row="10" Grid.Column="1" FontWeight="Bold" TextAlignment="Left" FontSize="40"/>
+
+
+		<!-- Convert Button -->
+		
+		<Button x:Name="ConvertButton" Content="Convert" Margin="0,10" Foreground="Black" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" Click="ConvertButton_Click">
+			<Button.Style>
+				<Style TargetType="Button">
+					<Setter Property="Background" Value="SkyBlue"/>
+					<Setter Property="FontFamily" Value="Times New Roman" />
+					<Setter Property="FontSize" Value="30" />
+					<Setter Property="HorizontalAlignment" Value="Center" />
+					<Setter Property="Width" Value="300" />
+					<Setter Property="Height" Value="100" />
+				</Style>
+			</Button.Style>
+		</Button>
+
+		<!-- Exit Button -->
+
+		<Button x:Name="ExitButton" Content="Exit" Margin="0,10" Foreground="Black" Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" Click="ExitButton_Click">
+			<Button.Style>
+				<Style TargetType="Button">
+					<Setter Property="Background" Value="SkyBlue"/>
+					<Setter Property="FontFamily" Value="Times New Roman" />
+					<Setter Property="FontSize" Value="25" />
+					<Setter Property="HorizontalAlignment" Value="Center" />
+					<Setter Property="Width" Value="200" />
+					<Setter Property="Height" Value="75" />
+				</Style>
+			</Button.Style>
+		</Button>
+	</Grid>
 </Page>
