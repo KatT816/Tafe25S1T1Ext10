@@ -41,7 +41,7 @@ namespace Calculator
 			double p, yearlyInterestRate, monthlyRepayment, i;
 			int n, m, y;
 
-			//this line catches validates input in principalTextBox
+			//these lines validates input in principalTextBox
 			try
 			{
 				p = double.Parse(principalTextBox.Text);
@@ -60,7 +60,7 @@ namespace Calculator
 				return;
 			}
 
-			//this line catches validates input in yearTextBox
+			//these lines validates input in yearTextBox
 			try
 			{
 				y = int.Parse(yearTextBox.Text);
@@ -79,7 +79,7 @@ namespace Calculator
 				return;
 			}
 
-			//this line catches validates input in monthsTextBox
+			//these lines validates input in monthsTextBox
 			try
 			{
 				m = int.Parse(monthsTextBox.Text);
@@ -101,13 +101,13 @@ namespace Calculator
 						excessYear.ToString() + "." +
 						"\n\nPrevious " +
 						y.ToString() +
-						" years and " +
+						" year/s and " +
 						m.ToString() +
-						" months is now converted to " +
+						" month/s is now converted to " +
 						y2.ToString() +
-						" years and  " +
+						" year/s and  " +
 						m2.ToString() +
-						" months.");						
+						" month/s.");						
 					await message.ShowAsync();
 
 					m = m2;
@@ -134,7 +134,7 @@ namespace Calculator
 			}
 
 
-			//this line validates input in yearlyInterestTextBox
+			//these lines validates input in yearlyInterestTextBox
 			try
 			{
 				yearlyInterestRate = double.Parse(yearlyInterestTextBox.Text);
