@@ -68,7 +68,7 @@
 					</Button.Style>
 				</Button>
 
-				<Button Content="Exit" Margin="0,10"  Foreground="Black" Click="Exit_Click" >
+				<Button Content="Close" Margin="0,10"  Foreground="Black" Click="Exit_Click" >
 				<Button.Style>
 						<Style TargetType="Button">
 							<Setter Property="Background" Value="SkyBlue"/>
