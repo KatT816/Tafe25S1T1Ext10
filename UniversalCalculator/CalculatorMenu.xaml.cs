@@ -27,26 +27,30 @@ namespace Calculator
 			this.InitializeComponent();
 		}
 
-		//added eventy handler
+		//added event handler
 		//Event Handler for Math Calculator
+		//navigation to Math calculator already added KT 10/03/25
 		private void OpenMainPage(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(MainPage));
 		}
 
 		// Event Handler for Mortgage Calculator button
+		//Navigation to Mortgage calculator already added KT 10/03/25
 		private void OpenMortgageCalculator(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(MortgageCalculator));
 		}
 
 		// Event Handler for Currency Calculator button
+		//Navigation to currency calculator already added KT 10/03/25
 		private void OpenCurrencyCalculator(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(CurrencyCalculator));
 		}
 
 		// Event Handler for Units Converter button
+		//Navigation to units calculator already added KT 10/03/25
 		private void OpenUnitsConverter(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(UnitsConverter));
